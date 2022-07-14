@@ -1,9 +1,12 @@
+{% load static %}
 <!DOCTYPE html> 
 <html lang="en">
  <head>
    <meta charset="UTF-8">
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
    <title>KeepUp | Editor de Noticias</title> 
+   <link rel="stylesheet" href="{% static 'css/style.css' %}"> 
+   <meta http-equiv="X-UA-Compatible" content="ie=edge">
 </head> 
 <body>
      <header>
@@ -13,8 +16,8 @@
        {% block content %}
          {% for i in object_list %}
              <div class="noticia">
-             <h3><a href="">{{ i.title }}</a></h3>
-               <p>{{ i.body }}</p>
+             <h3><a href="{% url 'detail' i.pk %}">{{ i.titulo }}</a></h3>
+               <p>{{ i.cuerpo }}</p>
             </div>
          {% endfor %}
         {% endblock content %}
