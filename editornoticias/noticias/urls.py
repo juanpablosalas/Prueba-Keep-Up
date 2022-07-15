@@ -11,5 +11,5 @@ from . import views
 
 urlpatterns = [
     path('', views.VistaNoticias.as_view(), name='home'),
-    path('article/<int:pk>', views.VistaNoticiaDetallada.as_view(), name='detail'),
+    path('noticia/<int:pk>', views.VistaNoticiaDetallada.as_view(), name='detail'),
 ]
