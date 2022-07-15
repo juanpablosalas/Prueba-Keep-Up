@@ -10,18 +10,20 @@
    <title>keep up | {{ noticia.titulo }}</title>
  </head>
  <body>
-     <header>
-       <h1 id="logo"> keep up  </h1>
-       <hr>
-       <h2> Editor de Noticias </h2>
-     </header>
+    
+<header>
+<div class="header-logo">
+ <h1 class="logo"> keep up </h1>
+ </div>
+ <h2 class="page-title"> Editor de Noticias </h2>
+</header>
      
-     <div class="container">
+     <div class="fullcontainer">
      {% block content %}
-         <div class="details">
-         <h2>{{ noticia.titulo }}</h2>
-         <p></p>
-         </div>
+
+         <h2 class="titulonotpagina">{{ noticia.fecha }}  {{ noticia.titulo }}</h2>
+         <p>{{ noticia.cuerpo }}</p>
+      
      {% endblock content %}
      </div>
  </body>

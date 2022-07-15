@@ -7,9 +7,7 @@
    <title>keep up | Editor de Noticias</title> 
    <link rel="stylesheet" href="{% static 'css/style.css' %}"> 
    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-   
-   
-   
+
 </head>
  
 <body>
@@ -21,15 +19,48 @@
  <h2 class="page-title"> Editor de Noticias </h2>
 </header>
      
-     <div class="container">
-       {% block content %}
-         {% for i in object_list %}
-             <div class="noticia">
-             <h3 class="titulo-noticia"><a href="{% url 'detail' i.pk %}"> {{ i.titulo }}</a></h3>
-               <div class="preview"> {{ i.cuerpo }}</div>
-            </div>
-         {% endfor %}
-        {% endblock content %}
+     
+<div class="container">
+    <button class="button add"> &#10010;</button>
+    <br>
+    
+    {% block content %}
+    {% for i in object_list %}
+    
+    <div class="noticia">
+    
+        <h3 id="titulo-noticia" class="titulo-noticia">
+            {{ i.titulo }}
+        </h3> 
+        
+        <button class="button ver"> &#10007;</button> 
+        <button class="button del" >&#9758;</button>  
+        <a href="{% url 'detail' i.pk %}"> <button class="button edit"> &#9998; </button></a>
+        
+        
+        <div class="preview"> {{ i.cuerpo }}</div>
+    </div>
+    {% endfor %}
+    {% endblock content %}
+</div>
+     
+     <div class ="noticiaeditor" >
+     
+     <span> <h3 class="titulo-noticia">hola </h3> </span>
+     
+     
+     <span id="texto-noticia" class="cuerponoticiaeditor">
+     Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi non volutpat tellus. Duis at eleifend magna. Etiam eget tortor varius, tempus leo quis, auctor leo. Ut viverra ligula et justo consectetur, finibus fringilla leo finibus. Ut pulvinar a enim et eleifend. Vestibulum nunc tellus, vestibulum eu maximus lacinia, ullamcorper vitae justo. Vestibulum tincidunt auctor ligula ac convallis. Ut volutpat, felis sed lobortis tristique, orci diam viverra nibh, eget iaculis arcu dolor at orci. Fusce suscipit dui sed dui placerat, quis maximus elit congue. Cras et tincidunt turpis. Ut dictum sem nec mattis vulputate. Fusce in dolor sed augue laoreet venenatis. Nulla faucibus magna velit, finibus egestas augue consectetur cursus. Nullam ac nisi luctus, placerat tortor nec, posuere sapien.
+
+Pellentesque sed ex vel nunc porttitor egestas eu eu augue. Nunc at viverra eros. Praesent commodo elementum euismod. Pellentesque porttitor imperdiet feugiat. Aenean blandit, urna vel fermentum mollis, augue odio cursus turpis, quis tristique nisi elit ac ipsum. Fusce non magna arcu. Nam blandit sem nec nibh suscipit, sed eleifend nunc sollicitudin. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Cras a ipsum vehicula, faucibus risus at, tincidunt est. Integer ex lorem, porttitor id facilisis eu, efficitur vel ligula. Integer id auctor metus. Duis ullamcorper sit amet lectus et maximus. Vestibulum fermentum nisl ut elit auctor scelerisque. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Maecenas fringilla lectus ut arcu lacinia tincidunt.
+
+Morbi ut sapien mollis, feugiat nibh a, dignissim purus. Pellentesque nec semper justo. Nulla vitae viverra quam. Donec sed lectus mattis, vehicula justo varius, aliquam tortor. Nam nec mauris enim. Donec tincidunt, leo et accumsan sodales, massa lectus lacinia metus, quis mattis libero magna quis enim. Aliquam erat volutpat. Phasellus arcu ex, mattis vitae porttitor a, mattis at ipsum.
+
+Proin et nunc quam. Mauris porttitor interdum venenatis. Ut vitae lacus eu metus sagittis luctus. Sed id rutrum nisl, finibus commodo eros. Duis sit amet odio sollicitudin, dictum lacus at, dapibus mi. Nunc ligula nunc, laoreet non quam et, hendrerit ultrices odio. Interdum et malesuada fames ac ante ipsum primis in faucibus. Etiam scelerisque posuere nunc sit amet placerat. Donec ut laoreet libero, vitae congue nibh.
+
+Nulla luctus lacinia posuere. Etiam ultrices aliquam felis, nec sodales sem cursus ac. Nulla dictum sapien quis ligula suscipit commodo. Quisque in libero vitae turpis cursus commodo. Aenean vitae purus at lorem fringilla congue at rutrum ligula. Etiam aliquam tristique velit nec fringilla. Sed fermentum magna neque, sed feugiat metus ultrices sed.
+     </span>
      </div>
+   
  </body> 
 </html>
