@@ -10,6 +10,9 @@ from django.urls import path
 from . import views
 
 urlpatterns = [
-    path('', views.VistaNoticias.as_view(), name='home'),
-    path('noticia/<int:pk>', views.VistaNoticiaDetallada.as_view(), name='detail'),
+    path('', views.home, name='home'),
+    path('add', views.add, name='add'),
+    #path('', views.VistaNoticias.as_view(), name='home'),
+    #path('noticia/<int:pk>', views.VistaNoticiaDetallada.as_view(), name='detail'),
+    path('noticia/<int:pk>', views.detail, name='detail'),
 ]

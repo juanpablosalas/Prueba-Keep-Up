@@ -1,5 +1,7 @@
 from django.db import models
 
+import datetime
+
 # Create your models here.
 
 class Noticia(models.Model):
@@ -10,3 +12,6 @@ class Noticia(models.Model):
     
     def __str__(self):
         return self.titulo
+    
+    def darFecha(self):
+        return self.fecha.strftime("%b %d ")
