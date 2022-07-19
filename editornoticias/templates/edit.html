@@ -4,7 +4,7 @@
  <head>
    <meta charset="UTF-8">
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   <title>keep up | Agregar noticia</title> 
+   <title>keep up | Editar noticia</title> 
    <link rel="stylesheet" href="{% static 'css/style.css' %}"> 
    <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
@@ -23,20 +23,20 @@
     {% csrf_token %}
     
     <div class="form-group">
-      <input type="text" class="form-control" id="id_title" placeholder="Titulo" name="titulo">
+      <input type="text" class="form-control"  value="{{noticia.titulo}}" id="id_title" name="titulo">
     </div>
     
     <div class="form-group">
     <label style="font-size:12px; "> Por: </label>
-      <input type="text" class="form-control" id="id_author" placeholder="Autor" name="autor">
+      <input type="text" class="form-control" id="id_author"  name="autor" value="{{ noticia.autor }}">
     </div>
     
     <div class="form-group">
-      <textarea class="form-control" id="id_noticia" name="cuerpo" placeholder="Inserte su noticia aquí" rows="10" cols="40"></textarea>
+      <textarea class="form-control" id="id_noticia" name="cuerpo"  rows="10" cols="40">{{noticia.cuerpo}}</textarea>
     </d iv>
 
-    <button type="submit" class="texto">Agregar</button>
-     <a href="/"><button type="button" class="texto">Cancelar</button></a>
+    <button type="submit" class="texto" name="modify" value="modify">Modificar</button>
+     <a href="./"><button type="button" class="texto">Cancelar</button></a>
     
   </form>
     

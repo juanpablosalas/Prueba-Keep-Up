@@ -1,30 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&family=Roboto:wght@700&display=swap');
 
 
-div.noticiaeditor{
-width: 100%;
-background-color:blue;
-height: 100vh;
-}
-
-span.cuerponoticiaeditor{
-color: white;
-width: 90%;
-margin-top: 2%;
-text-align: justify;
-text-justify: inter-word;
-}
-
-
-
-div.wrapper{
-display: grid;
-grid-template-columns: repeat(3, 1fr);
-grid-gap: 10px;
-margin-left: 120px;
-margin-right: 120px;
-}
-
 div.header-logo{
 background-color: white;
 height: 50px;
@@ -41,15 +17,95 @@ margin-right: -15px;
 border-bottom: 1px solid #A6A6A6;
 }
 
-form{
-margin-left: 120px;
-margin-right: 120px;
-background-color:red;
+
+
+
+h1{
+font-family: Montserrat, sans-serif;
+font-weight: normal;
+color: #85b637;
 }
 
-div.form-group{
-text-align:center;
+
+h2{
+font-family: Montserrat, sans-serif;
+font-weight: 700;
+font-size:18px;
 }
+
+
+button.button{
+float: right;
+border: 2px solid black;
+color: #85b637; 
+border-color: #85b637; 
+background-color: white;
+border-radius: 50%;
+font-size: 18px;
+padding: 0;
+text-align: center;
+cursor: pointer;
+height: 24px;
+width: 24px;
+margin-right: 4px;
+}
+
+
+button.texto{
+display: inline-block;
+font-family: Montserrat, sans-serif;
+font-weight: 500;
+font-size:14px;
+width: 7.5%;
+background-color: #85b637;
+padding: 5px 0px 5px 0px;
+margin-left: auto;
+margin-right: auto;
+border-radius: 10px;
+text-align: center;
+color: white;
+border: 0px;
+}
+
+button.texto:hover{
+opacity: 90%;
+}
+
+
+/** HOME HTML **/
+
+div.wrapper{
+display: grid;
+grid-template-columns: repeat(3, 1fr);
+grid-gap: 10px;
+margin-left: 120px;
+margin-right: 120px;
+}
+
+
+h3.titulo-noticia{
+font-family: Montserrat, sans-serif;
+font-size: 1.25rem;
+margin: 10px 0 5px 0;
+line-height: 1.25rem;
+}
+
+h3.titulo-noticia-fecha{
+color: #85b637;
+font-family: Montserrat, sans-serif;
+font-size: 1.25rem;
+margin: 10px 0 0px 0;
+line-height: 1.25rem;
+float: left;
+}
+
+hr.titulo-noticia-linea{
+border: 1.5px solid #85b637;
+width: 50px;
+float: left;
+}
+
+/** DETAIL HTML **/
 
 
 
@@ -58,9 +114,102 @@ float: center;
 text-align: center;
 width: 100%;
 height: auto;
-background-color: red;
-border-right: 2px solid #85b637;
 }
+
+h2.titulonotpagina{
+font-family: Montserrat, sans-serif;
+font-size: 30px;
+margin: 0px 0 40px 0;
+line-height: 30px;
+text-align: center;
+}
+
+h2.fechanotpagina{
+color: #85b637;
+font-family: Montserrat, sans-serif;
+font-size: 30px;
+margin: 0;
+line-height: 30px;
+text-align: center;
+}
+
+span.cuerponotpagina{
+margin: 0 120px 0 120px;
+text-align: justify;
+justify-content: center;
+display:inline-block;
+}
+
+div.delete-warning{
+background-color: rgba(200, 0,0, 0.4);
+color: rgba(120, 0,0, 1);
+padding: 5px;
+width: 50%;
+margin: 0 0 0 10px;
+}
+
+div.modified-warning{
+background-color: rgba(200, 0,0, 0.4);
+color: rgba(120, 0,0, 1);
+padding: 5px;
+width: 50%;
+margin: 0 0 0 10px;
+}
+
+button.confirm{
+display: inline-block;
+font-family: Montserrat, sans-serif;
+font-weight: 500;
+font-size:14px;
+width: 20%;
+background-color: rgba(120, 0,0, 0.7);
+padding: 5px 0px 5px 0px;
+margin-left: auto;
+margin-right: auto;
+border-radius: 10px;
+text-align: center;
+color: white;
+border: 0px;
+}
+
+button.confirm:hover{
+opacity: 90%;
+}
+
+/** ADD HTML **/
+
+#id_title{
+font-family: Montserrat, sans-serif;
+font-weight: 700;
+font-size: 30px;
+line-height: 30px;
+text-align: center;
+width: 100%;
+}
+
+#id_noticia{
+font-family: Montserrat, sans-serif;
+width: 100%;
+height: 500px;
+}
+
+#id_author{
+font-family: Montserrat, sans-serif;
+text-align: left;
+}
+
+form{
+}
+
+form.add{
+margin-left: 120px;
+margin-right: 120px;
+}
+
+div.form-group{
+text-align:center;
+}
+
 
 
 /** div.noticia{
@@ -92,18 +241,6 @@ padding: 10px 0 0px 0 ;
 }
 
 
-h1{
-font-family: Montserrat, sans-serif;
-font-weight: normal;
-color: #85b637;
-}
-
-
-h2{
-font-family: Montserrat, sans-serif;
-font-weight: 700;
-font-size:18px;
-}
 
 h2.page-title{
 width: 14%;
@@ -115,37 +252,10 @@ text-align: center;
 color: white;
 }
 
-h2.titulonotpagina{
-font-family: Roboto, sans-serif;
-font-size: 30px;
-margin: 0px 0 0px 0;
-line-height: 15px;
-text-align: center;
-}
 
 
 
-h3.titulo-noticia{
-font-family: Montserrat, sans-serif;
-font-size: 1.25rem;
-margin: 10px 0 5px 0;
-line-height: 1.25rem;
-}
 
-h3.titulo-noticia-fecha{
-color: #85b637;
-font-family: Montserrat, sans-serif;
-font-size: 1.25rem;
-margin: 10px 0 0px 0;
-line-height: 1.25rem;
-float: left;
-}
-
-hr.titulo-noticia-linea{
-border: 1.5px solid #85b637;
-width: 50px;
-float: left;
-}
 
 
 body{
@@ -176,40 +286,6 @@ opacity: 0.5;
 
 
 
-button.button{
-float: right;
-border: 2px solid black;
-color: #85b637; 
-border-color: #85b637; 
-background-color: white;
-border-radius: 50%;
-font-size: 18px;
-padding: 0;
-text-align: center;
-cursor: pointer;
-height: 24px;
-width: 24px;
-margin-right: 4px;
-}
 
 
-button.texto{
-display: block;
-font-family: Montserrat, sans-serif;
-font-weight: 500;
-font-size:14px;
-width: 7.5%;
-background-color: #85b637;
-padding: 5px 0px 5px 0px;
-margin-left: auto;
-margin-right: auto;
-border-radius: 10px;
-text-align: center;
-color: white;
-border: 0px;
-}
-
-button.texto:hover{
-opacity: 0.9;
-}
 

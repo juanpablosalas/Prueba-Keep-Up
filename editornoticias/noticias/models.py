@@ -2,6 +2,11 @@ from django.db import models
 
 import datetime
 
+import locale
+
+# Idioma "es-ES" (código para el español de España)
+locale.setlocale(locale.LC_TIME, 'es_ES.UTF-8') 
+
 # Create your models here.
 
 class Noticia(models.Model):
@@ -14,4 +19,7 @@ class Noticia(models.Model):
         return self.titulo
     
     def darFecha(self):
-        return self.fecha.strftime("%b %d ")
+        return self.fecha.strftime("%b ").capitalize()+self.fecha.strftime("%d")
+    
+    def darFechaDetalle(self):
+        return self.fecha.strftime("%d de %B ")

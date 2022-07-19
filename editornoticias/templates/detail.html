@@ -17,12 +17,43 @@
  </div>
   <a href="/"> <h2 class="page-title"> Editor de Noticias </h2> </a>
 </header>
+
+
+
+{% if modified %}
+<div class="modified-warning">
+Se ha actualizado la noticia con éxito.
+</div>
+{% endif %}
+
+{% if warning %}
+<div class="delete-warning">
+¿Seguro que desea eliminar esta noticia? Esta acción es irreversible.
+   <form method="post">
+      {% csrf_token %}
+<button type="submit" class="confirm" name="confirm-delete" value="confirmdelete">Eliminar</button>
+<button type="submit" class="confirm" name="cancel-delete" value="canceldelete">Cancelar</button></a>
+</form>
+</div>
+{% endif %}
+     
+     
+      <form method="post">
+         {% csrf_token %}
+     <button type="submit" class="button del" name="delete" value="delete"> &#10007;</button>
+     </form>
+     <a href="{% url 'edit' noticia.pk %}"> <button class="button edit"> &#9998;</button> </a>
+     
+     <br>
      
      <div class="fullcontainer">
      {% block content %}
-
-         <h2 class="titulonotpagina">{{ noticia.fecha }}  {{ noticia.titulo }}</h2>
-         <p>{{ noticia.cuerpo }}</p>
+     
+     
+     <h2 class="fechanotpagina"> {{ noticia.darFechaDetalle }}  </h2> <br>
+         <h2 class="titulonotpagina"> {{ noticia.titulo }}</h2>
+         
+         <span class="cuerponotpagina"> <em>Por: {{ noticia.autor }} </em> <br> <br> {{ noticia.cuerpo }} </span>
       
      {% endblock content %}
      </div>

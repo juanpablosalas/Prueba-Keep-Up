@@ -13,6 +13,8 @@ import os
 
 from pathlib import Path
 
+from django.contrib.messages import constants as message_constants
+
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -68,6 +70,9 @@ TEMPLATES = [
         },
     },
 ]
+
+
+MESSAGE_LEVEL = message_constants.DEBUG
 
 WSGI_APPLICATION = 'editornoticias.wsgi.application'
 

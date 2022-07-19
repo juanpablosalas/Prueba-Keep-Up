@@ -14,5 +14,6 @@ urlpatterns = [
     path('add', views.add, name='add'),
     #path('', views.VistaNoticias.as_view(), name='home'),
     #path('noticia/<int:pk>', views.VistaNoticiaDetallada.as_view(), name='detail'),
-    path('noticia/<int:pk>', views.detail, name='detail'),
+    path('noticia/<int:pk>/', views.detail, name='detail'),
+    path('noticia/<int:pk>/edit', views.edit, name='edit'),
 ]
