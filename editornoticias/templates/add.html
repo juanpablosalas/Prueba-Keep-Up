@@ -18,6 +18,13 @@
  </div>
  <a href="/"> <h2 class="page-title"> Editor de Noticias </h2> </a>
 </header>
+
+
+{% if warning %}
+<div class="delete-warning">
+El título, el autor y el cuerpo no pueden estar vacíos.
+</div>
+{% endif %}
      
  <form method="post" class="add">
     {% csrf_token %}

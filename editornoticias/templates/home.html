@@ -19,6 +19,17 @@
  <a href="./"> <h2 class="page-title">  Editor de Noticias  </h2> </a>
 </header>
      
+     {% if justadded %}
+     <div class="modified-warning">
+     Se ha añadido la noticia con éxito.
+     </div>
+     {% endif %}
+     
+     {% if justdeleted %}
+     <div class="modified-warning">
+     Se ha eliminado la noticia correctamente.
+     </div>
+     {% endif %}
 
     <a href="/add"> <button class="button add"> &#10010;</button> </a>
     <br>
